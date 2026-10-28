@@ -1,0 +1,23 @@
+{
+  "lingbot": {
+    "url": "https://github.com/robbyant/lingbot-vla-v2.git",
+    "revision": "be969b8fd117fb70550c5d4bf4bc328211b5b1b6",
+    "setup": "scripts/setup_lingbot.sh",
+    "patch": "scripts/patch_lingbot_inference.py"
+  },
+  "galaxea": {
+    "url": "https://github.com/OpenGalaxea/GalaxeaVLA.git",
+    "revision": "89f2322b4ad016e192437adc1a2c253b05bab246",
+    "setup": "scripts/setup_galaxea.sh"
+  },
+  "wbc": {
+    "path": "vendor/wbc_teleoperation",
+    "revision": null,
+    "note": "Existing external WBC source and assets required. No Git metadata or license found in local snapshot; not redistributed. SHA-256 inventory identifies the audited files. Set WBC_REPO to your installation."
+  },
+  "wla": {
+    "path": "third_party/unifolm-wla",
+    "revision": null,
+    "note": "Optional external WLA deployment required by wla_client; supply wla_repo and urdf in a local config. Server and remote SSH wrappers are outside this repository."
+  }
+}

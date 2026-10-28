@@ -1,0 +1,27 @@
+# Training configuration supplied and confirmed by the user on 2026-10-22.
+# Raw action: pivot(7), left EE(6), right EE(6), left hand(2), right hand(2).
+# State: observation.state[15:22], [22:29], [12:15]; leg joints omitted.
+# Alternatives within each group share a slot; they are not concatenated.
+parts_meta:
+  left_arm: 7
+  right_arm: 7
+  left_ee_pose: 6
+  right_ee_pose: 6
+  left_hand: 2
+  right_hand: 2
+  pivot: 9
+  waist: 3
+
+merge_spec:
+  left_control: [left_arm, left_ee_pose]
+  left_gripper: [left_hand]
+  right_control: [right_arm, right_ee_pose]
+  right_gripper: [right_hand]
+  lower_body: [pivot, waist]
+
+group_dims:
+  left_control: 7
+  left_gripper: 2
+  right_control: 7
+  right_gripper: 2
+  lower_body: 9

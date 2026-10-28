@@ -1,0 +1,13 @@
+# Direct dependencies observed on the control host (Python 3.10).
+# WBC source, assets and native Cyclone DDS must be installed separately.
+# These versions are a reference, not a complete environment lock.
+numpy==2.2.6
+scipy==1.15.2
+opencv-python==4.13.0.92
+pyzmq==27.1.0
+casadi==3.7.2
+pin==4.0.0
+meshcat==0.3.2
+logging-mp==0.2.1
+cyclonedds==0.10.2
+unitree_sdk2py @ git+https://github.com/unitreerobotics/unitree_sdk2_python.git@794fb2b3fd9165fd245a7b568698d9e97d8ac0a0

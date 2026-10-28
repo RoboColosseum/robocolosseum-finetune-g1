@@ -1,0 +1,16 @@
+[Unit]
+Description=RoboColosseum G1 policy console
+After=network-online.target
+
+[Service]
+Type=exec
+WorkingDirectory=%h/robocolosseum-finetune-g1
+Environment=PYTHONUNBUFFERED=1
+EnvironmentFile=-%h/.config/robocolosseum-g1/environment
+ExecStart=/usr/bin/python3 -m g1_deploy.web_ui --host 127.0.0.1 --port 7860
+Restart=on-failure
+RestartSec=5
+TimeoutStopSec=30
+
+[Install]
+WantedBy=default.target

@@ -1,0 +1,10 @@
+# Copy to ~/.config/robocolosseum-g1/environment and set absolute paths.
+# Also set WorkingDirectory in the user service if using a different checkout.
+G1_INTERFACE=eth0
+# ROBOT_CONFIG=/absolute/path/to/config/robot.json
+# WBC_REPO=/absolute/path/to/wbc_teleoperation
+# WBC_PYTHON=/absolute/path/to/wbc/python
+# POLICY_PYTHON=/absolute/path/to/policy/python
+# LINGBOT_PYTHON=/absolute/path/to/lingbot/python
+# GALAXEA_PYTHON=/absolute/path/to/galaxea/python
+# HF_TOKEN_PATH=/absolute/path/to/token

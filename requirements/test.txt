@@ -1,0 +1,5 @@
+numpy==2.2.6
+scipy==1.15.3
+opencv-python-headless==4.11.0.86
+pyzmq==26.4.0
+PyYAML==6.0.2

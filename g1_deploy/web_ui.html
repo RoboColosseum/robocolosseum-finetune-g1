@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>G1 Model Console</title>
+<style>
+:root{color-scheme:dark;font:16px system-ui,sans-serif;background:#0d1422;color:#e8eef9}*{box-sizing:border-box}body{margin:0}main{max-width:1000px;margin:48px auto;padding:0 24px}header{display:flex;align-items:center;justify-content:space-between;gap:20px}h1{font-size:28px;margin-bottom:8px}p{color:#a7b7cf;line-height:1.7}.badge{padding:8px 14px;border:1px solid #475b79;border-radius:30px;white-space:nowrap}.card{background:#172237;border:1px solid #2b3c57;border-radius:16px;padding:24px;margin:22px 0}.grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}label{display:block;color:#bfcee3;font-size:14px}select{display:block;width:100%;background:#0d1729;border:1px solid #465978;border-radius:8px;color:white;padding:12px;margin-top:8px;font:inherit}small{display:block;color:#9fb2d0;margin-top:8px;line-height:1.6}.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}button{border:0;border-radius:9px;padding:13px 24px;font:inherit;font-weight:600;cursor:pointer;background:#70e0be;color:#102521}button.stop{background:#f2aeae;color:#431e1e}button:disabled{opacity:.4;cursor:not-allowed}#error{color:#ffb4b4;white-space:pre-wrap}pre{background:#09111e;border-radius:10px;padding:18px;max-height:440px;overflow:auto;white-space:pre-wrap;overflow-wrap:anywhere;font:12px/1.65 ui-monospace,monospace}.details{overflow-wrap:anywhere;font-size:13px}.panels{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:start}.panels>.card{min-width:0;margin:0}.panel-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:24px}h2{font-size:21px;margin:0}.step{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:8px;background:#2d435c;color:#9ee8cf;margin-right:8px;font-size:15px}summary{cursor:pointer;color:#a7b7cf;padding:10px 0}.panels .grid{grid-template-columns:1fr}@media(max-width:800px){.panels{grid-template-columns:1fr}}footer{color:#8ea1be;font-size:13px;line-height:1.8}@media(max-width:620px){main{margin:24px auto;padding:0 14px}.grid{grid-template-columns:1fr}.card{padding:18px}h1{font-size:23px}header{align-items:flex-start}}
+</style>
+<main>
+<header><div><h1>G1 Model Console</h1><p>1. Start server &nbsp; → &nbsp; 2. Start client</p></div><span class="badge" id="state">Connecting</span></header>
+<p id="error" role="alert"></p>
+<div class="panels">
+<section class="card" aria-labelledby="serverTitle">
+<div class="panel-heading"><h2 id="serverTitle"><span class="step">1</span> Server</h2><span class="badge" id="serverState">Idle</span></div>
+<div class="grid"><label>Task<select id="task"></select></label><label>Model<select id="model"></select></label></div>
+<small id="modelNote"></small>
+<div class="actions"><button id="serverStart" disabled>Start server</button><button id="serverStop" class="stop" disabled>Stop server</button></div>
+<div class="actions"><button id="testStart" disabled>Test inference</button></div><small>Uses saved observations. Does not move the robot.</small><pre id="testLog">No inference test run</pre>
+<p id="serverDetails" class="details">No server started</p>
+<details><summary>Server logs</summary><pre id="serverLog">Waiting for server…</pre></details>
+</section>
+<section class="card" aria-labelledby="clientTitle">
+<div class="panel-heading"><h2 id="clientTitle"><span class="step">2</span> Client</h2><span class="badge" id="clientState">Idle</span></div>
+<p id="clientHint">Start the server first.</p>
+<div class="actions"><button id="clientStart" disabled>Start client</button><button id="clientStop" class="stop" disabled>Stop client</button></div>
+<p id="clientDetails" class="details">No client started</p>
+<details><summary>Client logs</summary><pre id="clientLog">Waiting for client…</pre></details>
+</section>
+</div>
+<section class="card" aria-labelledby="rolloutTitle">
+<div class="panel-heading"><h2 id="rolloutTitle">Rollout recordings</h2><button id="rolloutRefresh">Refresh</button></div>
+<p id="rolloutHint">Loading recordings…</p>
+<p id="rolloutError" role="alert" style="color:#ffb4b4"></p>
+<div style="overflow-x:auto"><table style="width:100%;text-align:left;border-spacing:0 16px"><thead><tr><th>Task / model</th><th>Started</th><th>Size / status</th><th></th></tr></thead><tbody id="rolloutRows"></tbody></table></div>
+</section>
+</main>
+<script>
+const $=id=>document.getElementById(id);
+const taskNames={'carry-box':'Carry box','fold-towel':'Fold towel','hang-keys':'Hang keys','load-clothes-washing-machine':'Load clothes into washing machine','plate-into-rack':'Place plate into rack'};
+const families={groot:'GR00T N1.7',pi05:'π0.5',molmoact2:'MolmoAct2',lingbot:'LingBot VLA V2',galaxea:'Galaxea G0.5'};
+let models=[],busy=false,connected=false,current={client:{active:false},server:{active:false,ready:false}};
+let rolloutBusy=false,rolloutBlocked=true;
+async function api(path,data){const r=await fetch('/api/'+path,{method:data?'POST':'GET',headers:{'Content-Type':'application/json'},body:data?JSON.stringify(data):undefined,signal:AbortSignal.timeout(8000)});const j=await r.json();if(!r.ok)throw Error(j.error||r.statusText);return j}
+function controls(){const m=models.find(x=>x.key===$('model').value),c=current.client,s=current.server,blocked=!connected||busy;$('modelNote').textContent=m?.unavailable_reason||(!m?.downloaded?'Download incomplete.':'');const testing=!!current.test?.active;const selectedReady=s.ready&&s.loaded_model===m?.key&&s.state!=='stopping';$('clientHint').textContent=c.active?'Robot client is running.':selectedReady?'Ready to start the robot client.':s.active?'Waiting for the selected model server.':'Start the selected model server first.';$('serverStart').disabled=blocked||c.active||s.active||s.ready||!m?.available;$('testStart').disabled=blocked||testing||c.active||!selectedReady;$('clientStart').disabled=blocked||testing||c.active||!selectedReady||!m?.available||rolloutBusy;$('clientStop').disabled=blocked||!c.active||c.state==='stopping';$('serverStop').disabled=blocked||testing||c.active||!s.active||s.state==='stopping';for(const id of ['task','model'])$(id).disabled=busy||c.active||s.active;for(const b of document.querySelectorAll('[data-delete-rollout]'))b.disabled=blocked||rolloutBusy||rolloutBlocked||c.active}
+function selectTask(){const options=models.filter(m=>m.task===$('task').value&&!m.unavailable_reason);$('model').replaceChildren(...options.map(m=>new Option(families[m.family]||m.family,m.key)));controls()}
+function render(s){current=s;$('testLog').textContent=s.test?.log||'No inference test run';$('state').textContent=s.client.active?'Executing':s.server.ready?'Server ready':s.server.active?'Loading server':'Idle';for(const kind of ['server','client']){const r=s[kind];$(kind+'State').textContent=({idle:'Idle',loading:'Loading',ready:'Ready',running:'Running',stopping:'Stopping',stopped:'Stopped',finished:'Finished',failed:'Failed',external:'Ready · External'})[r.state]||r.state;$(kind+'Details').textContent=`${r.state} · ${r.loaded_model||r.model||'No model'}${r.external?' · Started outside this UI; stop it in its terminal':''}${r.exit_code!=null?' · Exit code '+r.exit_code:''}${r.forced_stop?' · Force-stopped; recording may be incomplete':''}${r.log_path?' · Log: '+r.log_path:''}`;const el=$(kind+'Log'),bottom=el.scrollTop+el.clientHeight>=el.scrollHeight-40;el.textContent=r.log||'Waiting…';if(bottom)el.scrollTop=el.scrollHeight}controls()}
+async function poll(){try{const s=await api('status');connected=true;render(s)}catch(e){connected=false;$('state').textContent='Disconnected';$('error').textContent=e.message;controls()}setTimeout(poll,1500)}
+async function action(path){busy=true;controls();$('error').textContent='';try{render(await api(path,{model:$('model').value}))}catch(e){$('error').textContent=e.message}finally{busy=false;controls()}}
+function formatSize(n){return n>=1073741824?(n/1073741824).toFixed(2)+' GiB':(n/1048576).toFixed(1)+' MiB'}
+async function loadRollouts(){
+  if(rolloutBusy)return;
+  rolloutBusy=true;$('rolloutRefresh').disabled=true;controls();$('rolloutError').textContent='';
+  try{
+    const data=await api('rollouts');rolloutBlocked=data.deletion_blocked;
+    const rollouts=data.rollouts.filter(r=>r.mode!=='observe');
+    $('rolloutHint').textContent=`${rollouts.length} recordings · ${formatSize(rollouts.reduce((n,r)=>n+r.size_bytes,0))}. `+(rolloutBlocked?'Stop the robot client, then refresh to enable deletion.':'Deleting permanently removes the selected recording, including images and joint data.');
+    $('rolloutRows').replaceChildren(...rollouts.map(r=>{
+      const tr=document.createElement('tr');
+      const values=[`${taskNames[r.task]||r.task} · ${r.model}`,new Date(r.started_at*1000).toLocaleString(),`${formatSize(r.size_bytes)} · ${r.mode||'unknown'} · ${r.flush_complete?'Saved':'Completion unconfirmed'}`];
+      for(const value of values){const td=document.createElement('td');td.textContent=value;td.style.paddingRight='14px';tr.append(td)}
+      const name=document.createElement('small');name.textContent=r.name;tr.firstChild.append(name);
+      const td=document.createElement('td'),button=document.createElement('button');button.textContent='Delete';button.className='stop';button.dataset.deleteRollout=r.id;button.onclick=()=>removeRollout(r);td.append(button);tr.append(td);return tr;
+    }));
+  }catch(e){rolloutBlocked=true;$('rolloutError').textContent=e.message}
+  finally{rolloutBusy=false;$('rolloutRefresh').disabled=false;controls()}
+}
+async function removeRollout(r){
+  if(!confirm(`Permanently delete this recording?\n\n${r.name}\n${formatSize(r.size_bytes)}\n\nAll images, joint data and actions in this recording will be removed. This cannot be undone.`))return;
+  rolloutBusy=true;controls();$('rolloutError').textContent='';
+  try{await api('rollouts/delete',{id:r.id,confirm_name:r.name});rolloutBusy=false;await loadRollouts()}
+  catch(e){$('rolloutError').textContent=e.message}
+  finally{rolloutBusy=false;controls()}
+}
+$('rolloutRefresh').onclick=loadRollouts;
+$('task').onchange=selectTask;$('model').onchange=controls;
+$('testStart').onclick=()=>action('server/test');
+$('serverStart').onclick=()=>action('server/start');$('clientStart').onclick=()=>action('client/execute');$('clientStop').onclick=()=>action('client/stop');$('serverStop').onclick=()=>action('server/stop');
+(async()=>{try{const c=await api('catalog');models=c.models;$('task').replaceChildren(...[...new Set(models.map(m=>m.task))].map(t=>new Option(taskNames[t]||t,t)));selectTask();poll();loadRollouts()}catch(e){$('state').textContent='Connection failed';$('error').textContent=e.message}})();
+</script></html>

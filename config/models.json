@@ -1,0 +1,1527 @@
+{
+  "repo": "jasonren-ai2/g1-vla-finetune-checkpoints",
+  "revision": "a91defe347b668d0078d228164fd4fb8e7113907",
+  "models": {
+    "groot-carry-box": {
+      "family": "groot",
+      "task": "carrying box",
+      "folder": "gr00t-n1.7-3b_g1-carry-box_step50000_gbs256",
+      "model_path": "models/by-family/groot/carry-box-50k",
+      "chunk_size": 40,
+      "head_mode": "stereo_full",
+      "pivot_order": "rpy",
+      "weight_sha256": "bee19a87f2a02e370e56ea462f0b654d89c6081a3a60132581a2a5c373ad1b15",
+      "weight_bytes": 12576215312,
+      "task_slug": "carry-box",
+      "source_path": "models/jasonren-g1/gr00t-n1.7-3b_g1-carry-box_step50000_gbs256"
+    },
+    "groot-fold-towel": {
+      "family": "groot",
+      "task": "fold towel",
+      "folder": "gr00t-n1.7-3b_g1-fold-towel_step50000_gbs256",
+      "model_path": "models/by-family/groot/fold-towel-50k",
+      "chunk_size": 40,
+      "head_mode": "stereo_squash",
+      "pivot_order": "rpy",
+      "weight_sha256": "d70380caea9272b2122039f5c0341b28fa358101fee4510971ea7abffb9d765b",
+      "weight_bytes": 12576215312,
+      "task_slug": "fold-towel",
+      "source_path": "models/jasonren-g1/gr00t-n1.7-3b_g1-fold-towel_step50000_gbs256"
+    },
+    "groot-hang-keys": {
+      "family": "groot",
+      "task": "hang keys",
+      "folder": "gr00t-n1.7-3b_g1-hang-keys_step50000_gbs256",
+      "model_path": "models/by-family/groot/hang-keys-50k",
+      "chunk_size": 40,
+      "head_mode": "stereo_squash",
+      "pivot_order": "rpy",
+      "weight_sha256": "5a0d8b9fb21e14999f2b44b5ba1a96cdec67f1d34ff27b07b36ae310926e9e3f",
+      "weight_bytes": 12576215312,
+      "task_slug": "hang-keys",
+      "source_path": "models/jasonren-g1/gr00t-n1.7-3b_g1-hang-keys_step50000_gbs256"
+    },
+    "groot-load-clothes-washing-machine": {
+      "family": "groot",
+      "task": "load clothes washing machine",
+      "folder": "gr00t-n1.7-3b_g1-load-clothes-washing-machine_step50000_gbs256",
+      "model_path": "models/by-family/groot/load-clothes-washing-machine-50k",
+      "chunk_size": 40,
+      "head_mode": "stereo_squash",
+      "pivot_order": "rpy",
+      "weight_sha256": "2b6998a4688e163a50f2432f492e46ae47d2e2afd0fdcb772339a61e6a22e9aa",
+      "weight_bytes": 12576215312,
+      "task_slug": "load-clothes-washing-machine",
+      "source_path": "models/jasonren-g1/gr00t-n1.7-3b_g1-load-clothes-washing-machine_step50000_gbs256"
+    },
+    "groot-plate-into-rack": {
+      "family": "groot",
+      "task": "plate into rack",
+      "folder": "gr00t-n1.7-3b_g1-plate-into-rack_step50000_gbs256",
+      "model_path": "models/by-family/groot/plate-into-rack-50k",
+      "chunk_size": 40,
+      "head_mode": "stereo_squash",
+      "pivot_order": "rpy",
+      "weight_sha256": "0ef3deb8e2c8d4249369b3b09545b749c382cbc35fb89bee62ea6f94a6eae5ca",
+      "weight_bytes": 12576215312,
+      "task_slug": "plate-into-rack",
+      "source_path": "models/jasonren-g1/gr00t-n1.7-3b_g1-plate-into-rack_step50000_gbs256"
+    },
+    "molmoact2-fold-towel": {
+      "family": "molmoact2",
+      "task": "fold towel",
+      "folder": "molmoact2_g1-fold-towel_step50000_gbs256",
+      "model_path": "models/by-family/molmoact2/fold-towel-50k",
+      "chunk_size": 30,
+      "head_mode": "stereo_full",
+      "pivot_order": "rpy",
+      "weight_bytes": 12679625488,
+      "task_slug": "fold-towel",
+      "source_path": "models/jasonren-g1/molmoact2_g1-fold-towel_step50000_gbs256",
+      "weight_files": [
+        {
+          "path": "model.safetensors",
+          "size": 12679625488,
+          "sha256": "9403698146418f033156519b1ffe6e6c55f78a061927ff8c3b378915e12ab225"
+        }
+      ],
+      "required_files": [
+        {
+          "path": "config.json",
+          "size": 5270,
+          "sha256": null
+        },
+        {
+          "path": "model.safetensors",
+          "size": 12679625488,
+          "sha256": "9403698146418f033156519b1ffe6e6c55f78a061927ff8c3b378915e12ab225"
+        },
+        {
+          "path": "policy_postprocessor.json",
+          "size": 915,
+          "sha256": null
+        },
+        {
+          "path": "policy_postprocessor_step_1_molmoact2_masked_unnormalizer.safetensors",
+          "size": 12280,
+          "sha256": "3ef1b65641b62e4f48f32261dd35c95804cd05fefdbeb15dcc36670d2769490e"
+        },
+        {
+          "path": "policy_preprocessor.json",
+          "size": 3811,
+          "sha256": null
+        },
+        {
+          "path": "policy_preprocessor_step_3_molmoact2_masked_normalizer.safetensors",
+          "size": 12224,
+          "sha256": "5fb681614e42f278eb61d2c14a8ba8e8264e39a9414dee15e15bd2a310250675"
+        },
+        {
+          "path": "train_config.json",
+          "size": 12102,
+          "sha256": null
+        }
+      ],
+      "weight_sha256": "9403698146418f033156519b1ffe6e6c55f78a061927ff8c3b378915e12ab225"
+    },
+    "pi05-carry-box": {
+      "family": "pi05",
+      "task": "carrying box",
+      "folder": "pi05-base_g1-carry-box_step50000_gbs256",
+      "model_path": "models/by-family/pi05/carry-box-50k",
+      "chunk_size": 50,
+      "head_mode": "stereo_full",
+      "pivot_order": "rpy",
+      "weight_sha256": "ae0eea5dbc61106bc0d954f575f792db85c4b197ae6b3b8c3c1b69831d46a28d",
+      "weight_bytes": 9354050784,
+      "task_slug": "carry-box",
+      "source_path": "models/jasonren-g1/pi05-base_g1-carry-box_step50000_gbs256"
+    },
+    "pi05-fold-towel": {
+      "family": "pi05",
+      "task": "fold towel",
+      "folder": "pi05-base_g1-fold-towel_step50000_gbs256",
+      "model_path": "models/by-family/pi05/fold-towel-50k",
+      "chunk_size": 50,
+      "head_mode": "stereo_full",
+      "pivot_order": "rpy",
+      "weight_sha256": "b1b1cdee0ac7fe4cb887d08a41313664c9fe9d975994c95cdf6a7d16d30ed91b",
+      "weight_bytes": 9354050784,
+      "task_slug": "fold-towel",
+      "source_path": "models/jasonren-g1/pi05-base_g1-fold-towel_step50000_gbs256"
+    },
+    "pi05-hang-keys": {
+      "family": "pi05",
+      "task": "hang keys",
+      "folder": "pi05-base_g1-hang-keys_step50000_gbs256",
+      "model_path": "models/by-family/pi05/hang-keys-50k",
+      "chunk_size": 50,
+      "head_mode": "stereo_full",
+      "pivot_order": "rpy",
+      "weight_sha256": "1f89fbfe3273a648ac842c43a6d39848ad110331083c2db535e32b43812904c1",
+      "weight_bytes": 9354050784,
+      "task_slug": "hang-keys",
+      "source_path": "models/jasonren-g1/pi05-base_g1-hang-keys_step50000_gbs256",
+      "ang_z_limit": 0.85
+    },
+    "pi05-load-clothes-washing-machine": {
+      "family": "pi05",
+      "task": "load clothes washing machine",
+      "folder": "pi05-base_g1-load-clothes-washing-machine_step50000_gbs256",
+      "model_path": "models/by-family/pi05/load-clothes-washing-machine-50k",
+      "chunk_size": 50,
+      "head_mode": "stereo_full",
+      "pivot_order": "rpy",
+      "weight_sha256": "ad7887b9907272b56a6ca002a1856ee1b23043f47d1f96ff87ab6cc912e695e0",
+      "weight_bytes": 9354050784,
+      "task_slug": "load-clothes-washing-machine",
+      "source_path": "models/jasonren-g1/pi05-base_g1-load-clothes-washing-machine_step50000_gbs256"
+    },
+    "pi05-plate-into-rack": {
+      "family": "pi05",
+      "task": "plate into rack",
+      "folder": "pi05-base_g1-plate-into-rack_step50000_gbs256",
+      "model_path": "models/by-family/pi05/plate-into-rack-50k",
+      "chunk_size": 50,
+      "head_mode": "stereo_full",
+      "pivot_order": "rpy",
+      "weight_sha256": "a02e2967c3823f783822c9ee7aa85e2d4363b8b48f84ffa45aaf57620c27d4ec",
+      "weight_bytes": 9354050784,
+      "task_slug": "plate-into-rack",
+      "source_path": "models/jasonren-g1/pi05-base_g1-plate-into-rack_step50000_gbs256"
+    },
+    "molmoact2-carry-box": {
+      "family": "molmoact2",
+      "task": "carrying box",
+      "folder": "molmoact2_g1-carry-box_step50000_gbs256",
+      "model_path": "models/by-family/molmoact2/carry-box-50k",
+      "chunk_size": 30,
+      "head_mode": "stereo_full",
+      "pivot_order": "rpy",
+      "weight_bytes": 12679625488,
+      "task_slug": "carry-box",
+      "source_path": "models/jasonren-g1/molmoact2_g1-carry-box_step50000_gbs256",
+      "weight_files": [
+        {
+          "path": "model.safetensors",
+          "size": 12679625488,
+          "sha256": "3f05104a437c2eb3c3885179c59e50aa0314a75f9389b9212601a7c1137aa33d"
+        }
+      ],
+      "required_files": [
+        {
+          "path": "config.json",
+          "size": 5269,
+          "sha256": null
+        },
+        {
+          "path": "model.safetensors",
+          "size": 12679625488,
+          "sha256": "3f05104a437c2eb3c3885179c59e50aa0314a75f9389b9212601a7c1137aa33d"
+        },
+        {
+          "path": "policy_postprocessor.json",
+          "size": 915,
+          "sha256": null
+        },
+        {
+          "path": "policy_postprocessor_step_1_molmoact2_masked_unnormalizer.safetensors",
+          "size": 12280,
+          "sha256": "08adc27612e3d19ff54aef66c103e6ffa5802676d63388f5111b40e51adc63f9"
+        },
+        {
+          "path": "policy_preprocessor.json",
+          "size": 3811,
+          "sha256": null
+        },
+        {
+          "path": "policy_preprocessor_step_3_molmoact2_masked_normalizer.safetensors",
+          "size": 12224,
+          "sha256": "d04b6b28a809fc3449f7d0949fc4fdded12f42a0e42f84d22bdafdc408bc735a"
+        },
+        {
+          "path": "train_config.json",
+          "size": 12096,
+          "sha256": null
+        }
+      ],
+      "weight_sha256": "3f05104a437c2eb3c3885179c59e50aa0314a75f9389b9212601a7c1137aa33d"
+    },
+    "molmoact2-hang-keys": {
+      "family": "molmoact2",
+      "task": "hang keys",
+      "folder": "molmoact2_g1-hang-keys_step50000_gbs256",
+      "model_path": "models/by-family/molmoact2/hang-keys-50k",
+      "chunk_size": 30,
+      "head_mode": "stereo_full",
+      "pivot_order": "rpy",
+      "weight_bytes": 12679625488,
+      "task_slug": "hang-keys",
+      "source_path": "models/jasonren-g1/molmoact2_g1-hang-keys_step50000_gbs256",
+      "weight_files": [
+        {
+          "path": "model.safetensors",
+          "size": 12679625488,
+          "sha256": "1eba2f819e3f9f56d1d2b194a2b239fe122c3c1539b5e7963a966b9a8e433619"
+        }
+      ],
+      "required_files": [
+        {
+          "path": "config.json",
+          "size": 5269,
+          "sha256": null
+        },
+        {
+          "path": "model.safetensors",
+          "size": 12679625488,
+          "sha256": "1eba2f819e3f9f56d1d2b194a2b239fe122c3c1539b5e7963a966b9a8e433619"
+        },
+        {
+          "path": "policy_postprocessor.json",
+          "size": 915,
+          "sha256": null
+        },
+        {
+          "path": "policy_postprocessor_step_1_molmoact2_masked_unnormalizer.safetensors",
+          "size": 12280,
+          "sha256": "e5125c9a9a7cebf9236696f7fff07de81692b76b3694266ba2687d58024ede65"
+        },
+        {
+          "path": "policy_preprocessor.json",
+          "size": 3811,
+          "sha256": null
+        },
+        {
+          "path": "policy_preprocessor_step_3_molmoact2_masked_normalizer.safetensors",
+          "size": 12224,
+          "sha256": "5f75e7cb9205348f68d7e80d085159ba43acf17baf874b2260e2bbee5f72a0a4"
+        },
+        {
+          "path": "train_config.json",
+          "size": 12096,
+          "sha256": null
+        }
+      ],
+      "weight_sha256": "1eba2f819e3f9f56d1d2b194a2b239fe122c3c1539b5e7963a966b9a8e433619"
+    },
+    "molmoact2-load-clothes-washing-machine": {
+      "family": "molmoact2",
+      "task": "load clothes washing machine",
+      "folder": "molmoact2_g1-load-clothes-washing-machine_step50000_gbs256",
+      "model_path": "models/by-family/molmoact2/load-clothes-washing-machine-50k",
+      "chunk_size": 30,
+      "head_mode": "stereo_full",
+      "pivot_order": "rpy",
+      "weight_bytes": 12679625488,
+      "task_slug": "load-clothes-washing-machine",
+      "source_path": "models/jasonren-g1/molmoact2_g1-load-clothes-washing-machine_step50000_gbs256",
+      "weight_files": [
+        {
+          "path": "model.safetensors",
+          "size": 12679625488,
+          "sha256": "1e805373faec6572ef142af5319242cfd1415b5eb366720d350339ab0b127ec4"
+        }
+      ],
+      "required_files": [
+        {
+          "path": "config.json",
+          "size": 5288,
+          "sha256": null
+        },
+        {
+          "path": "model.safetensors",
+          "size": 12679625488,
+          "sha256": "1e805373faec6572ef142af5319242cfd1415b5eb366720d350339ab0b127ec4"
+        },
+        {
+          "path": "policy_postprocessor.json",
+          "size": 915,
+          "sha256": null
+        },
+        {
+          "path": "policy_postprocessor_step_1_molmoact2_masked_unnormalizer.safetensors",
+          "size": 12280,
+          "sha256": "3076d0c6010a39bae8e7b2335532693cc15a33284b8224695ec5b7e68ccc2fda"
+        },
+        {
+          "path": "policy_preprocessor.json",
+          "size": 3811,
+          "sha256": null
+        },
+        {
+          "path": "policy_preprocessor_step_3_molmoact2_masked_normalizer.safetensors",
+          "size": 12224,
+          "sha256": "53e12a4a947a74f2c6008a362f505584575ee3e1656733a40e75371bab5aa8d9"
+        },
+        {
+          "path": "train_config.json",
+          "size": 12210,
+          "sha256": null
+        }
+      ],
+      "weight_sha256": "1e805373faec6572ef142af5319242cfd1415b5eb366720d350339ab0b127ec4"
+    },
+    "molmoact2-plate-into-rack": {
+      "family": "molmoact2",
+      "task": "plate into rack",
+      "folder": "molmoact2_g1-plate-into-rack_step50000_gbs256",
+      "model_path": "models/by-family/molmoact2/plate-into-rack-50k",
+      "chunk_size": 30,
+      "head_mode": "stereo_full",
+      "pivot_order": "rpy",
+      "weight_bytes": 12679625488,
+      "task_slug": "plate-into-rack",
+      "source_path": "models/jasonren-g1/molmoact2_g1-plate-into-rack_step50000_gbs256",
+      "weight_files": [
+        {
+          "path": "model.safetensors",
+          "size": 12679625488,
+          "sha256": "2e188c32f74e9e5372ad1685e2875d603017da95461db4dfe07d202f19e11d91"
+        }
+      ],
+      "required_files": [
+        {
+          "path": "config.json",
+          "size": 5275,
+          "sha256": null
+        },
+        {
+          "path": "model.safetensors",
+          "size": 12679625488,
+          "sha256": "2e188c32f74e9e5372ad1685e2875d603017da95461db4dfe07d202f19e11d91"
+        },
+        {
+          "path": "policy_postprocessor.json",
+          "size": 915,
+          "sha256": null
+        },
+        {
+          "path": "policy_postprocessor_step_1_molmoact2_masked_unnormalizer.safetensors",
+          "size": 12280,
+          "sha256": "51bf03053e50aec74605503563c1d06cd81b6958509a854bb8565ba32cc90bbb"
+        },
+        {
+          "path": "policy_preprocessor.json",
+          "size": 3811,
+          "sha256": null
+        },
+        {
+          "path": "policy_preprocessor_step_3_molmoact2_masked_normalizer.safetensors",
+          "size": 12224,
+          "sha256": "3f2e016d8da8948cbe180d9308beab6c7aaf4892203eb164614cc53d084b76f8"
+        },
+        {
+          "path": "train_config.json",
+          "size": 12132,
+          "sha256": null
+        }
+      ],
+      "weight_sha256": "2e188c32f74e9e5372ad1685e2875d603017da95461db4dfe07d202f19e11d91"
+    },
+    "lingbot-carry-box": {
+      "family": "lingbot",
+      "task": "carrying box",
+      "folder": "lingbot-vla-v2_g1-carry-box_step50000_gbs256",
+      "model_path": "models/by-family/lingbot/carry-box-50k",
+      "chunk_size": 50,
+      "head_mode": "stereo_full",
+      "pivot_order": "rpy",
+      "weight_bytes": 25503889772,
+      "task_slug": "carry-box",
+      "source_path": "models/jasonren-g1/lingbot-vla-v2_g1-carry-box_step50000_gbs256",
+      "weight_files": [
+        {
+          "path": "model-00001-of-00006.safetensors",
+          "size": 4947507248,
+          "sha256": "8a0a28f28c135519212f03848fe8708ec82a3a80c2a47f61b2c433f73ecbfe05"
+        },
+        {
+          "path": "model-00002-of-00006.safetensors",
+          "size": 4944315304,
+          "sha256": "d46cdbe3eda2feca4aeced5f80666fa951cee65f87bbdb343cc6fcca452bbff4"
+        },
+        {
+          "path": "model-00003-of-00006.safetensors",
+          "size": 4944315360,
+          "sha256": "3a22d6e8bbfdc6bbd51b7964c58f371aadea738ec9850fe8594ed79e8f2b8313"
+        },
+        {
+          "path": "model-00004-of-00006.safetensors",
+          "size": 4992858968,
+          "sha256": "fc97d9529d56f620eaa09182f7f3c454a28b92a78961d8c999be8aad25dd0f8e"
+        },
+        {
+          "path": "model-00005-of-00006.safetensors",
+          "size": 4963062048,
+          "sha256": "c2a531881d4ed4e861d05a6fbad87062fc08d980c079ab56dd5a868e6b7e8294"
+        },
+        {
+          "path": "model-00006-of-00006.safetensors",
+          "size": 711830844,
+          "sha256": "74cfa3197e7e1b7eb2e530c39e1981ab675c101fe9c30199a46b1eba98cc6182"
+        }
+      ],
+      "required_files": [
+        {
+          "path": "added_tokens.json",
+          "size": 707,
+          "sha256": null
+        },
+        {
+          "path": "chat_template.jinja",
+          "size": 5292,
+          "sha256": null
+        },
+        {
+          "path": "config.json",
+          "size": 4627,
+          "sha256": null
+        },
+        {
+          "path": "merges.txt",
+          "size": 1671853,
+          "sha256": null
+        },
+        {
+          "path": "model-00001-of-00006.safetensors",
+          "size": 4947507248,
+          "sha256": "8a0a28f28c135519212f03848fe8708ec82a3a80c2a47f61b2c433f73ecbfe05"
+        },
+        {
+          "path": "model-00002-of-00006.safetensors",
+          "size": 4944315304,
+          "sha256": "d46cdbe3eda2feca4aeced5f80666fa951cee65f87bbdb343cc6fcca452bbff4"
+        },
+        {
+          "path": "model-00003-of-00006.safetensors",
+          "size": 4944315360,
+          "sha256": "3a22d6e8bbfdc6bbd51b7964c58f371aadea738ec9850fe8594ed79e8f2b8313"
+        },
+        {
+          "path": "model-00004-of-00006.safetensors",
+          "size": 4992858968,
+          "sha256": "fc97d9529d56f620eaa09182f7f3c454a28b92a78961d8c999be8aad25dd0f8e"
+        },
+        {
+          "path": "model-00005-of-00006.safetensors",
+          "size": 4963062048,
+          "sha256": "c2a531881d4ed4e861d05a6fbad87062fc08d980c079ab56dd5a868e6b7e8294"
+        },
+        {
+          "path": "model-00006-of-00006.safetensors",
+          "size": 711830844,
+          "sha256": "74cfa3197e7e1b7eb2e530c39e1981ab675c101fe9c30199a46b1eba98cc6182"
+        },
+        {
+          "path": "model.safetensors.index.json",
+          "size": 207389,
+          "sha256": null
+        },
+        {
+          "path": "norm_stats.json",
+          "size": 13275,
+          "sha256": null
+        },
+        {
+          "path": "preprocessor_config.json",
+          "size": 782,
+          "sha256": null
+        },
+        {
+          "path": "robot_config.yaml",
+          "size": 1561,
+          "sha256": null
+        },
+        {
+          "path": "special_tokens_map.json",
+          "size": 613,
+          "sha256": null
+        },
+        {
+          "path": "tokenizer.json",
+          "size": 11422654,
+          "sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4"
+        },
+        {
+          "path": "tokenizer_config.json",
+          "size": 5472,
+          "sha256": null
+        },
+        {
+          "path": "train_config.yaml",
+          "size": 7053,
+          "sha256": null
+        },
+        {
+          "path": "video_preprocessor_config.json",
+          "size": 817,
+          "sha256": null
+        },
+        {
+          "path": "vocab.json",
+          "size": 2776833,
+          "sha256": null
+        }
+      ],
+      "revision": "fffb8c5b6653908693beb2a5f18940f8fc485f0b"
+    },
+    "lingbot-fold-towel": {
+      "family": "lingbot",
+      "task": "fold towel",
+      "folder": "lingbot-vla-v2_g1-fold-towel_step50000_gbs256",
+      "model_path": "models/by-family/lingbot/fold-towel-50k",
+      "chunk_size": 50,
+      "head_mode": "stereo_full",
+      "pivot_order": "rpy",
+      "weight_bytes": 25503889772,
+      "task_slug": "fold-towel",
+      "source_path": "models/jasonren-g1/lingbot-vla-v2_g1-fold-towel_step50000_gbs256",
+      "weight_files": [
+        {
+          "path": "model-00001-of-00006.safetensors",
+          "size": 4947507248,
+          "sha256": "ad6ba8ed972099f31bec4ac6ff4fd31a5e2fad7747ebd8c89fe43a598535f568"
+        },
+        {
+          "path": "model-00002-of-00006.safetensors",
+          "size": 4944315304,
+          "sha256": "4e69b684da5b7ea563145f83d57bd51cd6dca61fef3db22bd04b2d2df777d1f6"
+        },
+        {
+          "path": "model-00003-of-00006.safetensors",
+          "size": 4944315360,
+          "sha256": "72b42c966b2f7e8633f6ff6af2b869d1fc7113c35a7d9246aed02b0cf2df1fc1"
+        },
+        {
+          "path": "model-00004-of-00006.safetensors",
+          "size": 4992858968,
+          "sha256": "a40f84e4748ee7d153155394357331f4584f770ff6c803f0cd11d6d3f74e987a"
+        },
+        {
+          "path": "model-00005-of-00006.safetensors",
+          "size": 4963062048,
+          "sha256": "46bf4b64408315c9b65eb45d55a72605cfd340b8ce5f7790022a10b6d33e20ca"
+        },
+        {
+          "path": "model-00006-of-00006.safetensors",
+          "size": 711830844,
+          "sha256": "c38bb1f64e3bf1607647dcc80daa8fabaf6790d412fc4ed0066d3bed694c4bd0"
+        }
+      ],
+      "required_files": [
+        {
+          "path": "added_tokens.json",
+          "size": 707,
+          "sha256": null
+        },
+        {
+          "path": "chat_template.jinja",
+          "size": 5292,
+          "sha256": null
+        },
+        {
+          "path": "config.json",
+          "size": 4620,
+          "sha256": null
+        },
+        {
+          "path": "merges.txt",
+          "size": 1671853,
+          "sha256": null
+        },
+        {
+          "path": "model-00001-of-00006.safetensors",
+          "size": 4947507248,
+          "sha256": "ad6ba8ed972099f31bec4ac6ff4fd31a5e2fad7747ebd8c89fe43a598535f568"
+        },
+        {
+          "path": "model-00002-of-00006.safetensors",
+          "size": 4944315304,
+          "sha256": "4e69b684da5b7ea563145f83d57bd51cd6dca61fef3db22bd04b2d2df777d1f6"
+        },
+        {
+          "path": "model-00003-of-00006.safetensors",
+          "size": 4944315360,
+          "sha256": "72b42c966b2f7e8633f6ff6af2b869d1fc7113c35a7d9246aed02b0cf2df1fc1"
+        },
+        {
+          "path": "model-00004-of-00006.safetensors",
+          "size": 4992858968,
+          "sha256": "a40f84e4748ee7d153155394357331f4584f770ff6c803f0cd11d6d3f74e987a"
+        },
+        {
+          "path": "model-00005-of-00006.safetensors",
+          "size": 4963062048,
+          "sha256": "46bf4b64408315c9b65eb45d55a72605cfd340b8ce5f7790022a10b6d33e20ca"
+        },
+        {
+          "path": "model-00006-of-00006.safetensors",
+          "size": 711830844,
+          "sha256": "c38bb1f64e3bf1607647dcc80daa8fabaf6790d412fc4ed0066d3bed694c4bd0"
+        },
+        {
+          "path": "model.safetensors.index.json",
+          "size": 207389,
+          "sha256": null
+        },
+        {
+          "path": "norm_stats.json",
+          "size": 13265,
+          "sha256": null
+        },
+        {
+          "path": "preprocessor_config.json",
+          "size": 782,
+          "sha256": null
+        },
+        {
+          "path": "robot_config.yaml",
+          "size": 1562,
+          "sha256": null
+        },
+        {
+          "path": "special_tokens_map.json",
+          "size": 613,
+          "sha256": null
+        },
+        {
+          "path": "tokenizer.json",
+          "size": 11422654,
+          "sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4"
+        },
+        {
+          "path": "tokenizer_config.json",
+          "size": 5472,
+          "sha256": null
+        },
+        {
+          "path": "train_config.yaml",
+          "size": 7027,
+          "sha256": null
+        },
+        {
+          "path": "video_preprocessor_config.json",
+          "size": 817,
+          "sha256": null
+        },
+        {
+          "path": "vocab.json",
+          "size": 2776833,
+          "sha256": null
+        }
+      ]
+    },
+    "lingbot-load-clothes-washing-machine": {
+      "family": "lingbot",
+      "task": "load clothes washing machine",
+      "folder": "lingbot-vla-v2_g1-load-clothes-washing-machine_step50000_gbs256",
+      "model_path": "models/by-family/lingbot/load-clothes-washing-machine-50k",
+      "chunk_size": 50,
+      "head_mode": "stereo_full",
+      "pivot_order": "rpy",
+      "weight_bytes": 25503889772,
+      "task_slug": "load-clothes-washing-machine",
+      "source_path": "models/jasonren-g1/lingbot-vla-v2_g1-load-clothes-washing-machine_step50000_gbs256",
+      "weight_files": [
+        {
+          "path": "model-00001-of-00006.safetensors",
+          "size": 4947507248,
+          "sha256": "7284934a5b7e925a77c0162a5382563e9fb143557ca9f94ee1b16ef824ddd19e"
+        },
+        {
+          "path": "model-00002-of-00006.safetensors",
+          "size": 4944315304,
+          "sha256": "f20d8dd6bcc4d1d8ac2efff905f68d16b3509579f319c036e018d239b9159dfb"
+        },
+        {
+          "path": "model-00003-of-00006.safetensors",
+          "size": 4944315360,
+          "sha256": "b4cf8d8b57648b0a66837b89206e6ea4ecc82e6738917bfbdffafcc35231cbf6"
+        },
+        {
+          "path": "model-00004-of-00006.safetensors",
+          "size": 4992858968,
+          "sha256": "d8b95d9f283bcc23128addad7304ea3a40ac8a41908a2e95e6311e00d9c83ff7"
+        },
+        {
+          "path": "model-00005-of-00006.safetensors",
+          "size": 4963062048,
+          "sha256": "3d35c5e79c108858196199247ed108227f4ae28b2898dafe19433488bd51ba95"
+        },
+        {
+          "path": "model-00006-of-00006.safetensors",
+          "size": 711830844,
+          "sha256": "615a7a4593eaaa5305ffd040f87ea27c92b5384ffead436f95a5fcb3505c14ae"
+        }
+      ],
+      "required_files": [
+        {
+          "path": "added_tokens.json",
+          "size": 707,
+          "sha256": null
+        },
+        {
+          "path": "chat_template.jinja",
+          "size": 5292,
+          "sha256": null
+        },
+        {
+          "path": "config.json",
+          "size": 4638,
+          "sha256": null
+        },
+        {
+          "path": "merges.txt",
+          "size": 1671853,
+          "sha256": null
+        },
+        {
+          "path": "model-00001-of-00006.safetensors",
+          "size": 4947507248,
+          "sha256": "7284934a5b7e925a77c0162a5382563e9fb143557ca9f94ee1b16ef824ddd19e"
+        },
+        {
+          "path": "model-00002-of-00006.safetensors",
+          "size": 4944315304,
+          "sha256": "f20d8dd6bcc4d1d8ac2efff905f68d16b3509579f319c036e018d239b9159dfb"
+        },
+        {
+          "path": "model-00003-of-00006.safetensors",
+          "size": 4944315360,
+          "sha256": "b4cf8d8b57648b0a66837b89206e6ea4ecc82e6738917bfbdffafcc35231cbf6"
+        },
+        {
+          "path": "model-00004-of-00006.safetensors",
+          "size": 4992858968,
+          "sha256": "d8b95d9f283bcc23128addad7304ea3a40ac8a41908a2e95e6311e00d9c83ff7"
+        },
+        {
+          "path": "model-00005-of-00006.safetensors",
+          "size": 4963062048,
+          "sha256": "3d35c5e79c108858196199247ed108227f4ae28b2898dafe19433488bd51ba95"
+        },
+        {
+          "path": "model-00006-of-00006.safetensors",
+          "size": 711830844,
+          "sha256": "615a7a4593eaaa5305ffd040f87ea27c92b5384ffead436f95a5fcb3505c14ae"
+        },
+        {
+          "path": "model.safetensors.index.json",
+          "size": 207389,
+          "sha256": null
+        },
+        {
+          "path": "norm_stats.json",
+          "size": 13268,
+          "sha256": null
+        },
+        {
+          "path": "preprocessor_config.json",
+          "size": 782,
+          "sha256": null
+        },
+        {
+          "path": "robot_config.yaml",
+          "size": 1580,
+          "sha256": null
+        },
+        {
+          "path": "special_tokens_map.json",
+          "size": 613,
+          "sha256": null
+        },
+        {
+          "path": "tokenizer.json",
+          "size": 11422654,
+          "sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4"
+        },
+        {
+          "path": "tokenizer_config.json",
+          "size": 5472,
+          "sha256": null
+        },
+        {
+          "path": "train_config.yaml",
+          "size": 7081,
+          "sha256": null
+        },
+        {
+          "path": "video_preprocessor_config.json",
+          "size": 817,
+          "sha256": null
+        },
+        {
+          "path": "vocab.json",
+          "size": 2776833,
+          "sha256": null
+        }
+      ]
+    },
+    "lingbot-plate-into-rack": {
+      "family": "lingbot",
+      "task": "plate into rack",
+      "folder": "lingbot-vla-v2_g1-plate-into-rack_step50000_gbs256",
+      "model_path": "models/by-family/lingbot/plate-into-rack-50k",
+      "chunk_size": 50,
+      "head_mode": "stereo_full",
+      "pivot_order": "rpy",
+      "weight_bytes": 25503889772,
+      "task_slug": "plate-into-rack",
+      "source_path": "models/jasonren-g1/lingbot-vla-v2_g1-plate-into-rack_step50000_gbs256",
+      "weight_files": [
+        {
+          "path": "model-00001-of-00006.safetensors",
+          "size": 4947507248,
+          "sha256": "1afb68ca315630902dc1bacfe8efadb8727bcc57ca7e761ba753195ae4af026b"
+        },
+        {
+          "path": "model-00002-of-00006.safetensors",
+          "size": 4944315304,
+          "sha256": "4286d1b0bda52a1819b684bf4493da8240a5c282c04ca9c7a6189f98ae7470a2"
+        },
+        {
+          "path": "model-00003-of-00006.safetensors",
+          "size": 4944315360,
+          "sha256": "7344f4362996f46050d18699979009eff8d69062e954905223176de0f1d88883"
+        },
+        {
+          "path": "model-00004-of-00006.safetensors",
+          "size": 4992858968,
+          "sha256": "863430dc5aef68e72dbf0c343b3293a42b35f5e9e7c81e834274872c1c36c664"
+        },
+        {
+          "path": "model-00005-of-00006.safetensors",
+          "size": 4963062048,
+          "sha256": "07594869469ff9f853be5dc9f8db1c6631bd501782417a2a0bb3a5a7132bab2f"
+        },
+        {
+          "path": "model-00006-of-00006.safetensors",
+          "size": 711830844,
+          "sha256": "676ef1b6c6fd05d8912d2caad5f3ad565298229ec9b0d61f673156725346e8cf"
+        }
+      ],
+      "required_files": [
+        {
+          "path": "added_tokens.json",
+          "size": 707,
+          "sha256": null
+        },
+        {
+          "path": "chat_template.jinja",
+          "size": 5292,
+          "sha256": null
+        },
+        {
+          "path": "config.json",
+          "size": 4625,
+          "sha256": null
+        },
+        {
+          "path": "merges.txt",
+          "size": 1671853,
+          "sha256": null
+        },
+        {
+          "path": "model-00001-of-00006.safetensors",
+          "size": 4947507248,
+          "sha256": "1afb68ca315630902dc1bacfe8efadb8727bcc57ca7e761ba753195ae4af026b"
+        },
+        {
+          "path": "model-00002-of-00006.safetensors",
+          "size": 4944315304,
+          "sha256": "4286d1b0bda52a1819b684bf4493da8240a5c282c04ca9c7a6189f98ae7470a2"
+        },
+        {
+          "path": "model-00003-of-00006.safetensors",
+          "size": 4944315360,
+          "sha256": "7344f4362996f46050d18699979009eff8d69062e954905223176de0f1d88883"
+        },
+        {
+          "path": "model-00004-of-00006.safetensors",
+          "size": 4992858968,
+          "sha256": "863430dc5aef68e72dbf0c343b3293a42b35f5e9e7c81e834274872c1c36c664"
+        },
+        {
+          "path": "model-00005-of-00006.safetensors",
+          "size": 4963062048,
+          "sha256": "07594869469ff9f853be5dc9f8db1c6631bd501782417a2a0bb3a5a7132bab2f"
+        },
+        {
+          "path": "model-00006-of-00006.safetensors",
+          "size": 711830844,
+          "sha256": "676ef1b6c6fd05d8912d2caad5f3ad565298229ec9b0d61f673156725346e8cf"
+        },
+        {
+          "path": "model.safetensors.index.json",
+          "size": 207389,
+          "sha256": null
+        },
+        {
+          "path": "norm_stats.json",
+          "size": 13253,
+          "sha256": null
+        },
+        {
+          "path": "preprocessor_config.json",
+          "size": 782,
+          "sha256": null
+        },
+        {
+          "path": "robot_config.yaml",
+          "size": 1567,
+          "sha256": null
+        },
+        {
+          "path": "special_tokens_map.json",
+          "size": 613,
+          "sha256": null
+        },
+        {
+          "path": "tokenizer.json",
+          "size": 11422654,
+          "sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4"
+        },
+        {
+          "path": "tokenizer_config.json",
+          "size": 5472,
+          "sha256": null
+        },
+        {
+          "path": "train_config.yaml",
+          "size": 7042,
+          "sha256": null
+        },
+        {
+          "path": "video_preprocessor_config.json",
+          "size": 817,
+          "sha256": null
+        },
+        {
+          "path": "vocab.json",
+          "size": 2776833,
+          "sha256": null
+        }
+      ]
+    },
+    "lingbot-hang-keys": {
+      "family": "lingbot",
+      "task": "hang keys",
+      "folder": "lingbot-vla-v2_g1-hang-keys_step50000_gbs256",
+      "model_path": "models/by-family/lingbot/hang-keys-50k",
+      "chunk_size": 50,
+      "head_mode": "stereo_full",
+      "pivot_order": "rpy",
+      "weight_bytes": 25503889772,
+      "task_slug": "hang-keys",
+      "source_path": "models/jasonren-g1/lingbot-vla-v2_g1-hang-keys_step50000_gbs256",
+      "weight_files": [
+        {
+          "path": "model-00001-of-00006.safetensors",
+          "size": 4947507248,
+          "sha256": "152e68fe5432fe8311e234e8fb443e62803cfc1b6ec8be6d41c21d6ad0970f41"
+        },
+        {
+          "path": "model-00002-of-00006.safetensors",
+          "size": 4944315304,
+          "sha256": "a7faa62a0a0ae2dc1fde48c54400ffb662907960bbf1c218263c495cd7e4685e"
+        },
+        {
+          "path": "model-00003-of-00006.safetensors",
+          "size": 4944315360,
+          "sha256": "873d6f99829ba142a745e58a4a6e8fcea4f36e5998fc804a17eca5e92176300f"
+        },
+        {
+          "path": "model-00004-of-00006.safetensors",
+          "size": 4992858968,
+          "sha256": "ec9103232cdb64d36812e1337d23f17808659dbdfb62b5bddc6d33910e35bff9"
+        },
+        {
+          "path": "model-00005-of-00006.safetensors",
+          "size": 4963062048,
+          "sha256": "185316492196f034d262f7b6a0320ceb6c6c744fa3138384dc3205cb42a74893"
+        },
+        {
+          "path": "model-00006-of-00006.safetensors",
+          "size": 711830844,
+          "sha256": "867c944bb6e0aab613b35bb0802129e32dd6ebea616838235890b7f0d0827218"
+        }
+      ],
+      "required_files": [
+        {
+          "path": "added_tokens.json",
+          "size": 707,
+          "sha256": null
+        },
+        {
+          "path": "chat_template.jinja",
+          "size": 5292,
+          "sha256": null
+        },
+        {
+          "path": "config.json",
+          "size": 4619,
+          "sha256": null
+        },
+        {
+          "path": "merges.txt",
+          "size": 1671853,
+          "sha256": null
+        },
+        {
+          "path": "model-00001-of-00006.safetensors",
+          "size": 4947507248,
+          "sha256": "152e68fe5432fe8311e234e8fb443e62803cfc1b6ec8be6d41c21d6ad0970f41"
+        },
+        {
+          "path": "model-00002-of-00006.safetensors",
+          "size": 4944315304,
+          "sha256": "a7faa62a0a0ae2dc1fde48c54400ffb662907960bbf1c218263c495cd7e4685e"
+        },
+        {
+          "path": "model-00003-of-00006.safetensors",
+          "size": 4944315360,
+          "sha256": "873d6f99829ba142a745e58a4a6e8fcea4f36e5998fc804a17eca5e92176300f"
+        },
+        {
+          "path": "model-00004-of-00006.safetensors",
+          "size": 4992858968,
+          "sha256": "ec9103232cdb64d36812e1337d23f17808659dbdfb62b5bddc6d33910e35bff9"
+        },
+        {
+          "path": "model-00005-of-00006.safetensors",
+          "size": 4963062048,
+          "sha256": "185316492196f034d262f7b6a0320ceb6c6c744fa3138384dc3205cb42a74893"
+        },
+        {
+          "path": "model-00006-of-00006.safetensors",
+          "size": 711830844,
+          "sha256": "867c944bb6e0aab613b35bb0802129e32dd6ebea616838235890b7f0d0827218"
+        },
+        {
+          "path": "model.safetensors.index.json",
+          "size": 207389,
+          "sha256": null
+        },
+        {
+          "path": "norm_stats.json",
+          "size": 13242,
+          "sha256": null
+        },
+        {
+          "path": "preprocessor_config.json",
+          "size": 782,
+          "sha256": null
+        },
+        {
+          "path": "robot_config.yaml",
+          "size": 1561,
+          "sha256": null
+        },
+        {
+          "path": "special_tokens_map.json",
+          "size": 613,
+          "sha256": null
+        },
+        {
+          "path": "tokenizer.json",
+          "size": 11422654,
+          "sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4"
+        },
+        {
+          "path": "tokenizer_config.json",
+          "size": 5472,
+          "sha256": null
+        },
+        {
+          "path": "train_config.yaml",
+          "size": 7024,
+          "sha256": null
+        },
+        {
+          "path": "video_preprocessor_config.json",
+          "size": 817,
+          "sha256": null
+        },
+        {
+          "path": "vocab.json",
+          "size": 2776833,
+          "sha256": null
+        }
+      ],
+      "revision": "32514aa4b8f413bcd23202913369129dd617a4a8"
+    },
+    "galaxea-fold-towel": {
+      "family": "galaxea",
+      "task": "fold towel",
+      "task_slug": "fold-towel",
+      "folder": "galaxea-g05_g1-fold-towel_step50000_gbs256",
+      "revision": "964499d2a23cef620b86258aec6709bc652ad36c",
+      "model_path": "models/by-family/galaxea/fold-towel-50k",
+      "source_path": "models/jasonren-g1/galaxea-g05_g1-fold-towel_step50000_gbs256",
+      "chunk_size": 32,
+      "head_mode": "stereo_full",
+      "pivot_order": "rpy",
+      "weight_bytes": 11947448411,
+      "weight_files": [
+        {
+          "path": "action_tokenizer.pt",
+          "size": 506886775,
+          "sha256": "5088f64a5452a60bbc8cac90ee7d79c156f1d14540bc3139aa7060f862dddace"
+        },
+        {
+          "path": "model.pt",
+          "size": 11440561636,
+          "sha256": "46eeec9fbf5940e6dc14aa8965a5c60c627da17f1910f7f3a6c1af20bddffacb"
+        }
+      ],
+      "required_files": [
+        {
+          "path": "action_tokenizer.pt",
+          "size": 506886775
+        },
+        {
+          "path": "config.yaml",
+          "size": 17560
+        },
+        {
+          "path": "dataset_stats.json",
+          "size": 337893
+        },
+        {
+          "path": "model.pt",
+          "size": 11440561636
+        },
+        {
+          "path": "overrides.yaml",
+          "size": 691
+        }
+      ],
+      "request_timeout_s": 10.0,
+      "action_bounds_mode": "clip"
+    },
+    "galaxea-load-clothes-washing-machine": {
+      "family": "galaxea",
+      "task": "load clothes washing machine",
+      "task_slug": "load-clothes-washing-machine",
+      "folder": "galaxea-g05_g1-load-clothes-washing-machine_step50000_gbs256",
+      "revision": "964499d2a23cef620b86258aec6709bc652ad36c",
+      "model_path": "models/by-family/galaxea/load-clothes-washing-machine-50k",
+      "source_path": "models/jasonren-g1/galaxea-g05_g1-load-clothes-washing-machine_step50000_gbs256",
+      "chunk_size": 32,
+      "head_mode": "stereo_full",
+      "pivot_order": "rpy",
+      "weight_bytes": 11947448411,
+      "weight_files": [
+        {
+          "path": "action_tokenizer.pt",
+          "size": 506886775,
+          "sha256": "5088f64a5452a60bbc8cac90ee7d79c156f1d14540bc3139aa7060f862dddace"
+        },
+        {
+          "path": "model.pt",
+          "size": 11440561636,
+          "sha256": "f50ff158b680ef030a7ac26d2d3a33f4f7d6741e8cd41b6f820ee3c15369f838"
+        }
+      ],
+      "required_files": [
+        {
+          "path": "action_tokenizer.pt",
+          "size": 506886775
+        },
+        {
+          "path": "config.yaml",
+          "size": 17614
+        },
+        {
+          "path": "dataset_stats.json",
+          "size": 339690
+        },
+        {
+          "path": "model.pt",
+          "size": 11440561636
+        },
+        {
+          "path": "overrides.yaml",
+          "size": 745
+        }
+      ],
+      "request_timeout_s": 10.0,
+      "action_bounds_mode": "clip"
+    },
+    "galaxea-plate-into-rack": {
+      "family": "galaxea",
+      "task": "plate into rack",
+      "task_slug": "plate-into-rack",
+      "folder": "galaxea-g05_g1-plate-into-rack_step50000_gbs256",
+      "revision": "964499d2a23cef620b86258aec6709bc652ad36c",
+      "model_path": "models/by-family/galaxea/plate-into-rack-50k",
+      "source_path": "models/jasonren-g1/galaxea-g05_g1-plate-into-rack_step50000_gbs256",
+      "chunk_size": 32,
+      "head_mode": "stereo_full",
+      "pivot_order": "rpy",
+      "weight_bytes": 11947448411,
+      "weight_files": [
+        {
+          "path": "action_tokenizer.pt",
+          "size": 506886775,
+          "sha256": "5088f64a5452a60bbc8cac90ee7d79c156f1d14540bc3139aa7060f862dddace"
+        },
+        {
+          "path": "model.pt",
+          "size": 11440561636,
+          "sha256": "845b7dee54c13c001febd8a0022a9f8bb293c1d2726381a58cd140b1e286e4bf"
+        }
+      ],
+      "required_files": [
+        {
+          "path": "action_tokenizer.pt",
+          "size": 506886775
+        },
+        {
+          "path": "config.yaml",
+          "size": 17572
+        },
+        {
+          "path": "dataset_stats.json",
+          "size": 341164
+        },
+        {
+          "path": "model.pt",
+          "size": 11440561636
+        },
+        {
+          "path": "overrides.yaml",
+          "size": 560
+        }
+      ],
+      "request_timeout_s": 10.0,
+      "action_bounds_mode": "clip"
+    },
+    "galaxea-carry-box": {
+      "family": "galaxea",
+      "task": "carrying box",
+      "task_slug": "carry-box",
+      "folder": "galaxea-g05_g1-carry-box_step50000_gbs256",
+      "revision": "fffb8c5b6653908693beb2a5f18940f8fc485f0b",
+      "model_path": "models/by-family/galaxea/carry-box-50k",
+      "source_path": "models/jasonren-g1/galaxea-g05_g1-carry-box_step50000_gbs256",
+      "chunk_size": 32,
+      "head_mode": "stereo_full",
+      "pivot_order": "rpy",
+      "weight_bytes": 11947448411,
+      "weight_files": [
+        {
+          "path": "action_tokenizer.pt",
+          "size": 506886775,
+          "sha256": "5088f64a5452a60bbc8cac90ee7d79c156f1d14540bc3139aa7060f862dddace"
+        },
+        {
+          "path": "model.pt",
+          "size": 11440561636,
+          "sha256": "3b0b3df3b99729b636c48eb090504468d7e8d4e810f271626a9ab048f415b73c"
+        }
+      ],
+      "required_files": [
+        {
+          "path": "action_tokenizer.pt",
+          "size": 506886775
+        },
+        {
+          "path": "config.yaml",
+          "size": 17557
+        },
+        {
+          "path": "dataset_stats.json",
+          "size": 341649
+        },
+        {
+          "path": "galaxea_g1/README.md",
+          "size": 1509
+        },
+        {
+          "path": "galaxea_g1/configs/data/g1.yaml",
+          "size": 3728
+        },
+        {
+          "path": "galaxea_g1/configs/data/g1_carry-box.yaml",
+          "size": 3727
+        },
+        {
+          "path": "galaxea_g1/configs/data/g1_fold-towel.yaml",
+          "size": 3728
+        },
+        {
+          "path": "galaxea_g1/configs/data/g1_hang-keys.yaml",
+          "size": 3727
+        },
+        {
+          "path": "galaxea_g1/configs/data/g1_load-clothes-washing-machine.yaml",
+          "size": 3746
+        },
+        {
+          "path": "galaxea_g1/configs/data/g1_plate-into-rack.yaml",
+          "size": 3733
+        },
+        {
+          "path": "galaxea_g1/configs/data/parts_meta/g1.yaml",
+          "size": 1083
+        },
+        {
+          "path": "galaxea_g1/configs/task/g1.yaml",
+          "size": 2610
+        },
+        {
+          "path": "galaxea_g1/configs/task/g1_carry-box.yaml",
+          "size": 2620
+        },
+        {
+          "path": "galaxea_g1/configs/task/g1_fold-towel.yaml",
+          "size": 2621
+        },
+        {
+          "path": "galaxea_g1/configs/task/g1_hang-keys.yaml",
+          "size": 2620
+        },
+        {
+          "path": "galaxea_g1/configs/task/g1_load-clothes-washing-machine.yaml",
+          "size": 2639
+        },
+        {
+          "path": "galaxea_g1/configs/task/g1_plate-into-rack.yaml",
+          "size": 2626
+        },
+        {
+          "path": "galaxea_g1/patches/finetune_preempt_save_and_ckpt_pruning.patch",
+          "size": 4056
+        },
+        {
+          "path": "galaxea_g1/patches/g1_dataset_loader.patch",
+          "size": 1342
+        },
+        {
+          "path": "model.pt",
+          "size": 11440561636
+        },
+        {
+          "path": "overrides.yaml",
+          "size": 688
+        }
+      ],
+      "request_timeout_s": 10.0,
+      "action_bounds_mode": "clip"
+    },
+    "galaxea-hang-keys": {
+      "family": "galaxea",
+      "task": "hang keys",
+      "task_slug": "hang-keys",
+      "folder": "galaxea-g05_g1-hang-keys_step50000_gbs256",
+      "revision": "fffb8c5b6653908693beb2a5f18940f8fc485f0b",
+      "model_path": "models/by-family/galaxea/hang-keys-50k",
+      "source_path": "models/jasonren-g1/galaxea-g05_g1-hang-keys_step50000_gbs256",
+      "chunk_size": 32,
+      "head_mode": "stereo_full",
+      "pivot_order": "rpy",
+      "weight_bytes": 11947448411,
+      "weight_files": [
+        {
+          "path": "action_tokenizer.pt",
+          "size": 506886775,
+          "sha256": "5088f64a5452a60bbc8cac90ee7d79c156f1d14540bc3139aa7060f862dddace"
+        },
+        {
+          "path": "model.pt",
+          "size": 11440561636,
+          "sha256": "1f4295fba9dd6c98cd8b3d49525dc6d8f193f69689619a5d690bb71d3a5dc63f"
+        }
+      ],
+      "required_files": [
+        {
+          "path": "action_tokenizer.pt",
+          "size": 506886775
+        },
+        {
+          "path": "config.yaml",
+          "size": 17557
+        },
+        {
+          "path": "dataset_stats.json",
+          "size": 340627
+        },
+        {
+          "path": "galaxea_g1/README.md",
+          "size": 1509
+        },
+        {
+          "path": "galaxea_g1/configs/data/g1.yaml",
+          "size": 3728
+        },
+        {
+          "path": "galaxea_g1/configs/data/g1_carry-box.yaml",
+          "size": 3727
+        },
+        {
+          "path": "galaxea_g1/configs/data/g1_fold-towel.yaml",
+          "size": 3728
+        },
+        {
+          "path": "galaxea_g1/configs/data/g1_hang-keys.yaml",
+          "size": 3727
+        },
+        {
+          "path": "galaxea_g1/configs/data/g1_load-clothes-washing-machine.yaml",
+          "size": 3746
+        },
+        {
+          "path": "galaxea_g1/configs/data/g1_plate-into-rack.yaml",
+          "size": 3733
+        },
+        {
+          "path": "galaxea_g1/configs/data/parts_meta/g1.yaml",
+          "size": 1083
+        },
+        {
+          "path": "galaxea_g1/configs/task/g1.yaml",
+          "size": 2610
+        },
+        {
+          "path": "galaxea_g1/configs/task/g1_carry-box.yaml",
+          "size": 2620
+        },
+        {
+          "path": "galaxea_g1/configs/task/g1_fold-towel.yaml",
+          "size": 2621
+        },
+        {
+          "path": "galaxea_g1/configs/task/g1_hang-keys.yaml",
+          "size": 2620
+        },
+        {
+          "path": "galaxea_g1/configs/task/g1_load-clothes-washing-machine.yaml",
+          "size": 2639
+        },
+        {
+          "path": "galaxea_g1/configs/task/g1_plate-into-rack.yaml",
+          "size": 2626
+        },
+        {
+          "path": "galaxea_g1/patches/finetune_preempt_save_and_ckpt_pruning.patch",
+          "size": 4056
+        },
+        {
+          "path": "galaxea_g1/patches/g1_dataset_loader.patch",
+          "size": 1342
+        },
+        {
+          "path": "model.pt",
+          "size": 11440561636
+        },
+        {
+          "path": "overrides.yaml",
+          "size": 688
+        }
+      ],
+      "request_timeout_s": 10.0,
+      "action_bounds_mode": "clip"
+    }
+  }
+}
