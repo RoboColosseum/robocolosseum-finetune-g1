@@ -8,7 +8,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 def main():
     from huggingface_hub import snapshot_download
-    inventory = json.loads((ROOT / 'inspection/galaxea/processor-inventory.json').read_text())
+    inventory = json.loads((ROOT / 'dependencies/galaxea-processor-inventory.json').read_text())
     destination = ROOT / 'models/base/G05'
     snapshot_download(inventory['repo'], revision=inventory['revision'],
                       allow_patterns=[f['rfilename'] for f in inventory['files']],

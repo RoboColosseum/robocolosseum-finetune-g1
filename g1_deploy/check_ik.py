@@ -11,7 +11,7 @@ from .wbc_client import Kinematics, load_config
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--config", default="config/deploy.example.json")
+    parser.add_argument("--config", default="config/robot.example.json")
     args = parser.parse_args()
     config = load_config(args.config)
     kinematics = Kinematics(config["wbc_repo"])

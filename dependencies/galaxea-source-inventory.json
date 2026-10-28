@@ -1,0 +1,337 @@
+{
+  "repo": "jasonren-ai2/g1-vla-finetune-checkpoints",
+  "revision": "fffb8c5b6653908693beb2a5f18940f8fc485f0b",
+  "files": [
+    {
+      "rfilename": "galaxea-g05_g1-fold-towel_step50000_gbs256/action_tokenizer.pt",
+      "blobId": "d15611061726daace78e316e0eebef94150c9a19",
+      "size": 506886775,
+      "lfs": {
+        "sha256": "5088f64a5452a60bbc8cac90ee7d79c156f1d14540bc3139aa7060f862dddace",
+        "size": 506886775,
+        "pointerSize": 134
+      }
+    },
+    {
+      "rfilename": "galaxea-g05_g1-fold-towel_step50000_gbs256/config.yaml",
+      "blobId": "960678a15c62b604e4e25ada48f037a8711ae527",
+      "size": 17560
+    },
+    {
+      "rfilename": "galaxea-g05_g1-fold-towel_step50000_gbs256/dataset_stats.json",
+      "blobId": "56fbbce68e4e03a26a8587daa2c2a23917aa2753",
+      "size": 337893
+    },
+    {
+      "rfilename": "galaxea-g05_g1-fold-towel_step50000_gbs256/model.pt",
+      "blobId": "2c4ce7f14bf54254eeb50d1c1b9716667c687825",
+      "size": 11440561636,
+      "lfs": {
+        "sha256": "46eeec9fbf5940e6dc14aa8965a5c60c627da17f1910f7f3a6c1af20bddffacb",
+        "size": 11440561636,
+        "pointerSize": 136
+      }
+    },
+    {
+      "rfilename": "galaxea-g05_g1-fold-towel_step50000_gbs256/overrides.yaml",
+      "blobId": "f0ab998e6c44ea4a838135534c7b7d3c144f5f81",
+      "size": 691
+    },
+    {
+      "rfilename": "galaxea-g05_g1-load-clothes-washing-machine_step50000_gbs256/action_tokenizer.pt",
+      "blobId": "d15611061726daace78e316e0eebef94150c9a19",
+      "size": 506886775,
+      "lfs": {
+        "sha256": "5088f64a5452a60bbc8cac90ee7d79c156f1d14540bc3139aa7060f862dddace",
+        "size": 506886775,
+        "pointerSize": 134
+      }
+    },
+    {
+      "rfilename": "galaxea-g05_g1-load-clothes-washing-machine_step50000_gbs256/config.yaml",
+      "blobId": "f8c84681078c4a0653e48512631fb1a569751a86",
+      "size": 17614
+    },
+    {
+      "rfilename": "galaxea-g05_g1-load-clothes-washing-machine_step50000_gbs256/dataset_stats.json",
+      "blobId": "80d788e18be43edf9604fe712b056377ff416ae5",
+      "size": 339690
+    },
+    {
+      "rfilename": "galaxea-g05_g1-load-clothes-washing-machine_step50000_gbs256/model.pt",
+      "blobId": "afbecff9b4f8102e9121b56053c8418be430a607",
+      "size": 11440561636,
+      "lfs": {
+        "sha256": "f50ff158b680ef030a7ac26d2d3a33f4f7d6741e8cd41b6f820ee3c15369f838",
+        "size": 11440561636,
+        "pointerSize": 136
+      }
+    },
+    {
+      "rfilename": "galaxea-g05_g1-load-clothes-washing-machine_step50000_gbs256/overrides.yaml",
+      "blobId": "d925a6dbe7d53e30b7f5d99baf7abd81ca32b1da",
+      "size": 745
+    },
+    {
+      "rfilename": "galaxea-g05_g1-plate-into-rack_step50000_gbs256/action_tokenizer.pt",
+      "blobId": "d15611061726daace78e316e0eebef94150c9a19",
+      "size": 506886775,
+      "lfs": {
+        "sha256": "5088f64a5452a60bbc8cac90ee7d79c156f1d14540bc3139aa7060f862dddace",
+        "size": 506886775,
+        "pointerSize": 134
+      }
+    },
+    {
+      "rfilename": "galaxea-g05_g1-plate-into-rack_step50000_gbs256/config.yaml",
+      "blobId": "078c79ed2f1278bfe202260955be48b0d33abea3",
+      "size": 17572
+    },
+    {
+      "rfilename": "galaxea-g05_g1-plate-into-rack_step50000_gbs256/dataset_stats.json",
+      "blobId": "55dd12a6e2d9352a53bb3dacffc765770b8624d9",
+      "size": 341164
+    },
+    {
+      "rfilename": "galaxea-g05_g1-plate-into-rack_step50000_gbs256/model.pt",
+      "blobId": "4da4d79a2969fc2817089f3d8ed8ad2d389797ff",
+      "size": 11440561636,
+      "lfs": {
+        "sha256": "845b7dee54c13c001febd8a0022a9f8bb293c1d2726381a58cd140b1e286e4bf",
+        "size": 11440561636,
+        "pointerSize": 136
+      }
+    },
+    {
+      "rfilename": "galaxea-g05_g1-plate-into-rack_step50000_gbs256/overrides.yaml",
+      "blobId": "7475bde90891bca62347daca62e36a83fa759cc4",
+      "size": 560
+    },
+    {
+      "rfilename": "galaxea-g05_g1-carry-box_step50000_gbs256/action_tokenizer.pt",
+      "blobId": "d15611061726daace78e316e0eebef94150c9a19",
+      "size": 506886775,
+      "lfs": {
+        "size": 506886775,
+        "sha256": "5088f64a5452a60bbc8cac90ee7d79c156f1d14540bc3139aa7060f862dddace"
+      }
+    },
+    {
+      "rfilename": "galaxea-g05_g1-carry-box_step50000_gbs256/config.yaml",
+      "blobId": "8190f1165c363cbf7f526033874942bd6fe16623",
+      "size": 17557
+    },
+    {
+      "rfilename": "galaxea-g05_g1-carry-box_step50000_gbs256/dataset_stats.json",
+      "blobId": "a17c275c3a71795a5dbf6b7ae2b19bdd0a626a5b",
+      "size": 341649
+    },
+    {
+      "rfilename": "galaxea-g05_g1-carry-box_step50000_gbs256/galaxea_g1/README.md",
+      "blobId": "340f68ba046efd95aecf84d094468f62556c13e9",
+      "size": 1509
+    },
+    {
+      "rfilename": "galaxea-g05_g1-carry-box_step50000_gbs256/galaxea_g1/configs/data/g1.yaml",
+      "blobId": "4373e83188f4b094f075f7de1fe12e2326ac65dd",
+      "size": 3728
+    },
+    {
+      "rfilename": "galaxea-g05_g1-carry-box_step50000_gbs256/galaxea_g1/configs/data/g1_carry-box.yaml",
+      "blobId": "9ee094d63dc1c853c479709eb7523805e6cf993d",
+      "size": 3727
+    },
+    {
+      "rfilename": "galaxea-g05_g1-carry-box_step50000_gbs256/galaxea_g1/configs/data/g1_fold-towel.yaml",
+      "blobId": "4373e83188f4b094f075f7de1fe12e2326ac65dd",
+      "size": 3728
+    },
+    {
+      "rfilename": "galaxea-g05_g1-carry-box_step50000_gbs256/galaxea_g1/configs/data/g1_hang-keys.yaml",
+      "blobId": "d2d104522278bd2065a20b7532ee061f50e4c13a",
+      "size": 3727
+    },
+    {
+      "rfilename": "galaxea-g05_g1-carry-box_step50000_gbs256/galaxea_g1/configs/data/g1_load-clothes-washing-machine.yaml",
+      "blobId": "464937d1c9c7f1fb752706f0ebb5d86a3865ef06",
+      "size": 3746
+    },
+    {
+      "rfilename": "galaxea-g05_g1-carry-box_step50000_gbs256/galaxea_g1/configs/data/g1_plate-into-rack.yaml",
+      "blobId": "a5fd46add1a08e070715259d7e81a41b81033316",
+      "size": 3733
+    },
+    {
+      "rfilename": "galaxea-g05_g1-carry-box_step50000_gbs256/galaxea_g1/configs/data/parts_meta/g1.yaml",
+      "blobId": "4eb7e60a591102657957f14bbd76199cba24306f",
+      "size": 1083
+    },
+    {
+      "rfilename": "galaxea-g05_g1-carry-box_step50000_gbs256/galaxea_g1/configs/task/g1.yaml",
+      "blobId": "2f79877dc4617b3b90ca6ec622f9d1ab51336272",
+      "size": 2610
+    },
+    {
+      "rfilename": "galaxea-g05_g1-carry-box_step50000_gbs256/galaxea_g1/configs/task/g1_carry-box.yaml",
+      "blobId": "4aca92cae9bd753dc48ca12cdfcfdf91b90e7318",
+      "size": 2620
+    },
+    {
+      "rfilename": "galaxea-g05_g1-carry-box_step50000_gbs256/galaxea_g1/configs/task/g1_fold-towel.yaml",
+      "blobId": "57c38c774e152222e6e7f87e7fab48556f6684be",
+      "size": 2621
+    },
+    {
+      "rfilename": "galaxea-g05_g1-carry-box_step50000_gbs256/galaxea_g1/configs/task/g1_hang-keys.yaml",
+      "blobId": "6caebbc72246da7116dff2c15e203427916cecd5",
+      "size": 2620
+    },
+    {
+      "rfilename": "galaxea-g05_g1-carry-box_step50000_gbs256/galaxea_g1/configs/task/g1_load-clothes-washing-machine.yaml",
+      "blobId": "2b101c8e6a0b86484e6d0764eaf0945c5206f1cd",
+      "size": 2639
+    },
+    {
+      "rfilename": "galaxea-g05_g1-carry-box_step50000_gbs256/galaxea_g1/configs/task/g1_plate-into-rack.yaml",
+      "blobId": "c25d8f39369e287badb42495fc350239c3b8a52f",
+      "size": 2626
+    },
+    {
+      "rfilename": "galaxea-g05_g1-carry-box_step50000_gbs256/galaxea_g1/patches/finetune_preempt_save_and_ckpt_pruning.patch",
+      "blobId": "6666e7fe89b792cef7502566d73f9714f85de0cb",
+      "size": 4056
+    },
+    {
+      "rfilename": "galaxea-g05_g1-carry-box_step50000_gbs256/galaxea_g1/patches/g1_dataset_loader.patch",
+      "blobId": "56c8b93d47ca08b4fda08847492a053af17196f6",
+      "size": 1342
+    },
+    {
+      "rfilename": "galaxea-g05_g1-carry-box_step50000_gbs256/model.pt",
+      "blobId": "7ea8cca1f4095328c3e65adce440a9c48b7edce7",
+      "size": 11440561636,
+      "lfs": {
+        "size": 11440561636,
+        "sha256": "3b0b3df3b99729b636c48eb090504468d7e8d4e810f271626a9ab048f415b73c"
+      }
+    },
+    {
+      "rfilename": "galaxea-g05_g1-carry-box_step50000_gbs256/overrides.yaml",
+      "blobId": "79f2c14be081c97876bede4dbce334522e03445d",
+      "size": 688
+    },
+    {
+      "rfilename": "galaxea-g05_g1-hang-keys_step50000_gbs256/action_tokenizer.pt",
+      "blobId": "d15611061726daace78e316e0eebef94150c9a19",
+      "size": 506886775,
+      "lfs": {
+        "size": 506886775,
+        "sha256": "5088f64a5452a60bbc8cac90ee7d79c156f1d14540bc3139aa7060f862dddace"
+      }
+    },
+    {
+      "rfilename": "galaxea-g05_g1-hang-keys_step50000_gbs256/config.yaml",
+      "blobId": "8cb576f41130248075e2709f946cf6969821b12d",
+      "size": 17557
+    },
+    {
+      "rfilename": "galaxea-g05_g1-hang-keys_step50000_gbs256/dataset_stats.json",
+      "blobId": "9a7aa49bc42a62d72069cd37a3ffd4a046e67005",
+      "size": 340627
+    },
+    {
+      "rfilename": "galaxea-g05_g1-hang-keys_step50000_gbs256/galaxea_g1/README.md",
+      "blobId": "340f68ba046efd95aecf84d094468f62556c13e9",
+      "size": 1509
+    },
+    {
+      "rfilename": "galaxea-g05_g1-hang-keys_step50000_gbs256/galaxea_g1/configs/data/g1.yaml",
+      "blobId": "4373e83188f4b094f075f7de1fe12e2326ac65dd",
+      "size": 3728
+    },
+    {
+      "rfilename": "galaxea-g05_g1-hang-keys_step50000_gbs256/galaxea_g1/configs/data/g1_carry-box.yaml",
+      "blobId": "9ee094d63dc1c853c479709eb7523805e6cf993d",
+      "size": 3727
+    },
+    {
+      "rfilename": "galaxea-g05_g1-hang-keys_step50000_gbs256/galaxea_g1/configs/data/g1_fold-towel.yaml",
+      "blobId": "4373e83188f4b094f075f7de1fe12e2326ac65dd",
+      "size": 3728
+    },
+    {
+      "rfilename": "galaxea-g05_g1-hang-keys_step50000_gbs256/galaxea_g1/configs/data/g1_hang-keys.yaml",
+      "blobId": "d2d104522278bd2065a20b7532ee061f50e4c13a",
+      "size": 3727
+    },
+    {
+      "rfilename": "galaxea-g05_g1-hang-keys_step50000_gbs256/galaxea_g1/configs/data/g1_load-clothes-washing-machine.yaml",
+      "blobId": "464937d1c9c7f1fb752706f0ebb5d86a3865ef06",
+      "size": 3746
+    },
+    {
+      "rfilename": "galaxea-g05_g1-hang-keys_step50000_gbs256/galaxea_g1/configs/data/g1_plate-into-rack.yaml",
+      "blobId": "a5fd46add1a08e070715259d7e81a41b81033316",
+      "size": 3733
+    },
+    {
+      "rfilename": "galaxea-g05_g1-hang-keys_step50000_gbs256/galaxea_g1/configs/data/parts_meta/g1.yaml",
+      "blobId": "4eb7e60a591102657957f14bbd76199cba24306f",
+      "size": 1083
+    },
+    {
+      "rfilename": "galaxea-g05_g1-hang-keys_step50000_gbs256/galaxea_g1/configs/task/g1.yaml",
+      "blobId": "2f79877dc4617b3b90ca6ec622f9d1ab51336272",
+      "size": 2610
+    },
+    {
+      "rfilename": "galaxea-g05_g1-hang-keys_step50000_gbs256/galaxea_g1/configs/task/g1_carry-box.yaml",
+      "blobId": "4aca92cae9bd753dc48ca12cdfcfdf91b90e7318",
+      "size": 2620
+    },
+    {
+      "rfilename": "galaxea-g05_g1-hang-keys_step50000_gbs256/galaxea_g1/configs/task/g1_fold-towel.yaml",
+      "blobId": "57c38c774e152222e6e7f87e7fab48556f6684be",
+      "size": 2621
+    },
+    {
+      "rfilename": "galaxea-g05_g1-hang-keys_step50000_gbs256/galaxea_g1/configs/task/g1_hang-keys.yaml",
+      "blobId": "6caebbc72246da7116dff2c15e203427916cecd5",
+      "size": 2620
+    },
+    {
+      "rfilename": "galaxea-g05_g1-hang-keys_step50000_gbs256/galaxea_g1/configs/task/g1_load-clothes-washing-machine.yaml",
+      "blobId": "2b101c8e6a0b86484e6d0764eaf0945c5206f1cd",
+      "size": 2639
+    },
+    {
+      "rfilename": "galaxea-g05_g1-hang-keys_step50000_gbs256/galaxea_g1/configs/task/g1_plate-into-rack.yaml",
+      "blobId": "c25d8f39369e287badb42495fc350239c3b8a52f",
+      "size": 2626
+    },
+    {
+      "rfilename": "galaxea-g05_g1-hang-keys_step50000_gbs256/galaxea_g1/patches/finetune_preempt_save_and_ckpt_pruning.patch",
+      "blobId": "6666e7fe89b792cef7502566d73f9714f85de0cb",
+      "size": 4056
+    },
+    {
+      "rfilename": "galaxea-g05_g1-hang-keys_step50000_gbs256/galaxea_g1/patches/g1_dataset_loader.patch",
+      "blobId": "56c8b93d47ca08b4fda08847492a053af17196f6",
+      "size": 1342
+    },
+    {
+      "rfilename": "galaxea-g05_g1-hang-keys_step50000_gbs256/model.pt",
+      "blobId": "836641532e8a1e4105761eac4b3c3707e00e7fe2",
+      "size": 11440561636,
+      "lfs": {
+        "size": 11440561636,
+        "sha256": "1f4295fba9dd6c98cd8b3d49525dc6d8f193f69689619a5d690bb71d3a5dc63f"
+      }
+    },
+    {
+      "rfilename": "galaxea-g05_g1-hang-keys_step50000_gbs256/overrides.yaml",
+      "blobId": "5246592e18b27ac295a8c96be3b6e8e5de336a91",
+      "size": 688
+    }
+  ]
+}

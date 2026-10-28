@@ -24,7 +24,7 @@ class IKResidualTests(unittest.TestCase):
         return k
 
     def test_filtered_lag_is_not_solver_failure_and_slew_is_retained(self):
-        config = load_config(ROOT / 'config/deploy.example.json')
+        config = load_config(ROOT / 'config/robot.example.json')
         k = self.make_kinematics(np.zeros(14), np.full(14, .2))
         pin = types.SimpleNamespace(rnea=lambda *args: np.zeros(14))
         with patch.dict('sys.modules', {'pinocchio': pin}):
@@ -33,7 +33,7 @@ class IKResidualTests(unittest.TestCase):
         np.testing.assert_allclose(command['arm_q'], config['arm_speed_rad_s']/30)
 
     def test_bad_raw_solution_still_rejected_and_diagnosed(self):
-        config = load_config(ROOT / 'config/deploy.example.json')
+        config = load_config(ROOT / 'config/robot.example.json')
         with tempfile.TemporaryDirectory() as root:
             config['ik_failure_dir'] = root
             k = self.make_kinematics(np.full(14, .101), np.zeros(14))
@@ -46,7 +46,7 @@ class IKResidualTests(unittest.TestCase):
             self.assertEqual(report['filtered_errors']['left']['position_m'], 0)
 
     def test_nonconvergence_is_recoverable(self):
-        config = load_config(ROOT / 'config/deploy.example.json')
+        config = load_config(ROOT / 'config/robot.example.json')
         k = self.make_kinematics(np.zeros(14), np.zeros(14))
         k.ik.opti.stats = lambda: {'success': False}
         with self.assertRaises(IKConvergenceError):
@@ -54,7 +54,7 @@ class IKResidualTests(unittest.TestCase):
                       np.asarray(config['initial_base_cmd']), config, 1/30)
 
     def test_filtered_command_tracking_guard_remains(self):
-        config = load_config(ROOT / 'config/deploy.example.json')
+        config = load_config(ROOT / 'config/robot.example.json')
         k = self.make_kinematics(np.zeros(14), np.ones(14))
         with self.assertRaises(ArmTrackingError):
             k.command(np.zeros(23), np.zeros(14), np.zeros(14), np.ones(14),

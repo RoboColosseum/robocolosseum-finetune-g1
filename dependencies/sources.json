@@ -14,10 +14,5 @@
     "path": "vendor/wbc_teleoperation",
     "revision": null,
     "note": "Existing external WBC source and assets required. No Git metadata or license found in local snapshot; not redistributed. SHA-256 inventory identifies the audited files. Set WBC_REPO to your installation."
-  },
-  "wla": {
-    "path": "third_party/unifolm-wla",
-    "revision": null,
-    "note": "Optional external WLA deployment required by wla_client; supply wla_repo and urdf in a local config. Server and remote SSH wrappers are outside this repository."
   }
 }

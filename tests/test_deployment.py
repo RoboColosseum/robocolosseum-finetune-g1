@@ -36,7 +36,7 @@ def require_tcp(test):
 
 class Conversions(unittest.TestCase):
     def setUp(self):
-        self.config = load_config(ROOT / "config/deploy.example.json")
+        self.config = load_config(ROOT / "config/robot.example.json")
 
     def test_action_order_and_rotation(self):
         a = np.arange(23, dtype=float) / 100
@@ -96,7 +96,9 @@ class Conversions(unittest.TestCase):
         for i, color in enumerate(colors):
             composite[:, i * 640:(i + 1) * 640] = color
         _, jpg = cv2.imencode('.jpg', composite)
-        config = load_config(ROOT / 'config/plate.example.json')['camera']
+        config = copy.deepcopy(self.config['camera'])
+        config['head_mode'] = 'stereo_squash'
+        config['columns']['head'] = [0, 1280]
         images = decode_camera(b'12345678' + jpg.tobytes(), config)
         self.assertEqual(images['head'].shape, (480, 640, 3))
         np.testing.assert_allclose(images['head'][200, 100], colors[0][::-1], atol=3)
@@ -114,7 +116,8 @@ class Conversions(unittest.TestCase):
         self.assertEqual(action_index(100, 200, 30, length=40, expiry_enabled=False), 39)
 
     def test_checkpoint_stats_if_available(self):
-        path = ROOT / "models/groot-n17-g1-carry-box-40k/policy_postprocessor_step_0_groot_action_unpack_unnormalize_v2.safetensors"
+        from g1_deploy.catalog import model_spec
+        path = Path(model_spec('groot-carry-box')['model_path']) / 'policy_postprocessor_step_0_groot_action_unpack_unnormalize_v2.safetensors'
         if not path.exists():
             self.skipTest("Checkpoint not copied to this machine")
         stats = read_stats(path)
@@ -270,7 +273,7 @@ class Protocol(unittest.TestCase):
         context = zmq.Context()
         pub = context.socket(zmq.PUB)
         port = pub.bind_to_random_port("tcp://127.0.0.1")
-        cfg = load_config(ROOT / "config/deploy.example.json")["camera"]
+        cfg = load_config(ROOT / "config/robot.example.json")["camera"]
         cfg['backend'] = 'zmq'
         cfg["address"] = f"tcp://127.0.0.1:{port}"
         reader = CameraReader(cfg)
@@ -315,7 +318,7 @@ class Protocol(unittest.TestCase):
         messages.LowState_ = object
         modules = {"unitree_sdk2py.core.channel": channel, "unitree_sdk2py.idl.unitree_hg.msg.dds_": messages}
         with patch.dict("sys.modules", modules):
-            robot = RobotTransport(load_config(ROOT / "config/deploy.example.json"), execute=False)
+            robot = RobotTransport(load_config(ROOT / "config/robot.example.json"), execute=False)
             robot.set_command({}, [])  # intentional: must remain a no-op in dry-run
             self.assertIsNone(robot.thread)
             robot.close()
@@ -364,7 +367,7 @@ class Protocol(unittest.TestCase):
              patch("g1_deploy.wbc_client.Kinematics", IK), \
              patch("g1_deploy.wbc_client.http_json", policy):
             with tempfile.TemporaryDirectory() as root:
-                config = load_config(ROOT / "config/deploy.example.json")
+                config = load_config(ROOT / "config/robot.example.json")
                 config['rollout_dir'] = root
                 run(config, "dry-run", duration=0.2)
                 folder = next(Path(root).iterdir())
@@ -381,7 +384,7 @@ class Protocol(unittest.TestCase):
         self.assertGreater(instances[0].commands, 0)
         # A dry-run must also detect a command-production stall; it cannot
         # claim readiness solely because it creates no DDS command publisher.
-        config = load_config(ROOT / "config/deploy.example.json")
+        config = load_config(ROOT / "config/robot.example.json")
         config["command_timeout_s"] = 0.001  # less than the 30 Hz loop interval
         with patch("g1_deploy.transport.RobotTransport", Robot), \
              patch("g1_deploy.wbc_client.CameraReader", Camera), \
@@ -404,7 +407,7 @@ class Protocol(unittest.TestCase):
              patch("g1_deploy.wbc_client.CameraReader", Camera), \
              patch("g1_deploy.wbc_client.Kinematics", DriftIK), \
              patch("g1_deploy.wbc_client.http_json", policy):
-            run(load_config(ROOT / "config/deploy.example.json"), "execute", duration=0.3)
+            run(load_config(ROOT / "config/robot.example.json"), "execute", duration=0.3)
         self.assertGreater(DriftIK.calls, 1)
         self.assertGreater(instances[-1].commands, 0)
         self.assertEqual(instances[-1].commands, DriftIK.calls - 1)
@@ -422,7 +425,7 @@ class Protocol(unittest.TestCase):
              patch("g1_deploy.wbc_client.CameraReader", Camera), \
              patch("g1_deploy.wbc_client.Kinematics", TrackingIK), \
              patch("g1_deploy.wbc_client.http_json", policy):
-            run(load_config(ROOT / "config/deploy.example.json"), "execute", duration=0.3)
+            run(load_config(ROOT / "config/robot.example.json"), "execute", duration=0.3)
         self.assertGreater(instances[-1].commands, 0)
         self.assertEqual(instances[-1].commands, TrackingIK.calls - 1)
         self.assertTrue(instances[-1].closed)
@@ -438,7 +441,7 @@ class Protocol(unittest.TestCase):
              patch("g1_deploy.wbc_client.CameraReader", Camera), \
              patch("g1_deploy.wbc_client.Kinematics", NonconvergentIK), \
              patch("g1_deploy.wbc_client.http_json", policy):
-            run(load_config(ROOT / "config/deploy.example.json"), "execute", duration=0.5)
+            run(load_config(ROOT / "config/robot.example.json"), "execute", duration=0.5)
         self.assertGreater(NonconvergentIK.calls, 4)
         self.assertEqual(instances[-1].commands, NonconvergentIK.calls - 3)
         self.assertTrue(instances[-1].closed)
@@ -451,7 +454,7 @@ class Protocol(unittest.TestCase):
              patch("g1_deploy.wbc_client.Kinematics", BrokenIK), \
              patch("g1_deploy.wbc_client.http_json", policy):
             with self.assertRaisesRegex(RuntimeError, "Reference IK did not converge"):
-                run(load_config(ROOT / "config/deploy.example.json"), "execute", duration=0.3)
+                run(load_config(ROOT / "config/robot.example.json"), "execute", duration=0.3)
         self.assertEqual(instances[-1].commands, 0)
         self.assertTrue(instances[-1].closed)
 

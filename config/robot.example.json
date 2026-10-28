@@ -1,5 +1,5 @@
 {
-  "model_path": "models/groot-n17-g1-carry-box-40k",
+  "model_path": "models/by-family/groot/carry-box-50k",
   "wbc_repo": "vendor/wbc_teleoperation",
   "policy_url": "http://127.0.0.1:8008",
   "task": "carrying box",

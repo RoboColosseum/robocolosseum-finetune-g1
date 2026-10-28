@@ -2,12 +2,28 @@
 import argparse
 import hashlib
 import json
+import os
 import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 from g1_deploy.catalog import catalog
+
+
+def link_models(models, root=ROOT):
+    """Expose catalog paths without moving weights or touching historical rollouts."""
+    for spec in models.values():
+        source = root / spec['source_path']
+        destination = root / spec['model_path']
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        if destination.is_symlink():
+            if destination.resolve() != source.resolve():
+                raise RuntimeError(f'Existing link points elsewhere: {destination}')
+            continue
+        if destination.exists():
+            raise RuntimeError(f'Will not overwrite existing directory: {destination}')
+        destination.symlink_to(os.path.relpath(source, destination.parent), target_is_directory=True)
 
 
 def main():
@@ -29,8 +45,7 @@ def main():
         for revision, patterns in revisions.items():
             snapshot_download(c['repo'], revision=revision, allow_patterns=patterns,
                               local_dir=ROOT / 'models/jasonren-g1', max_workers=3)
-    from scripts.organize_models import main as organize
-    organize()
+    link_models(selected)
     report = {'repo': c['repo'], 'revision': c['revision'], 'models': {}}
     for key, spec in selected.items():
         files = spec.get('weight_files') or [dict(path='model.safetensors', size=spec['weight_bytes'], sha256=spec['weight_sha256'])]

@@ -1,0 +1,51 @@
+{
+  "repo": "OpenGalaxea/G05",
+  "revision": "e312be81e90c56a55bcb26b57429bd39a335b449",
+  "files": [
+    {
+      "rfilename": "qwen3_5_2b_base_processor/config.json",
+      "blobId": "d30a15be1bbfd610f58ad80f1fbeb6778f58a80f",
+      "size": 2908
+    },
+    {
+      "rfilename": "qwen3_5_2b_base_processor/configuration.json",
+      "blobId": "3a6d425685de8896b2bc8b59b671e41aea1d7bf3",
+      "size": 51
+    },
+    {
+      "rfilename": "qwen3_5_2b_base_processor/merges.txt",
+      "blobId": "a494e019ca1502219fd0128658b979e5f05ae8e8",
+      "size": 3353259
+    },
+    {
+      "rfilename": "qwen3_5_2b_base_processor/preprocessor_config.json",
+      "blobId": "2ea84a437d448ff71b08df68fdd949d5cc4ebb64",
+      "size": 390
+    },
+    {
+      "rfilename": "qwen3_5_2b_base_processor/tokenizer.json",
+      "blobId": "468a6a46bcda7cfedbbda773b0176b8284724e6f",
+      "size": 12807196,
+      "lfs": {
+        "sha256": "fe000e3ed39ed12b8d2481d527d44f93c65d37e87645d2dcc80d1bf9d50d2927",
+        "size": 12807196,
+        "pointerSize": 133
+      }
+    },
+    {
+      "rfilename": "qwen3_5_2b_base_processor/tokenizer_config.json",
+      "blobId": "34e1f7a59c40a7a4197ce3dbb242b94dc5bef1dd",
+      "size": 16712
+    },
+    {
+      "rfilename": "qwen3_5_2b_base_processor/video_preprocessor_config.json",
+      "blobId": "37900b3ff9295e1aa7e211378466356b52e64e55",
+      "size": 386
+    },
+    {
+      "rfilename": "qwen3_5_2b_base_processor/vocab.json",
+      "blobId": "0aa0ce0658d60ac4a5d609f4eadb0e8e43514176",
+      "size": 6722759
+    }
+  ]
+}

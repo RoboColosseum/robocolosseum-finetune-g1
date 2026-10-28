@@ -7,7 +7,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 def main():
-    inventory = json.loads((ROOT / 'inspection/galaxea/source-inventory.json').read_text())
+    inventory = json.loads((ROOT / 'dependencies/galaxea-source-inventory.json').read_text())
     checked = []
     for item in inventory['files']:
         path = ROOT / 'models/jasonren-g1' / item['rfilename']

@@ -457,7 +457,7 @@ def run(config, mode, duration, observation_path=None):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--config", default="config/deploy.example.json")
+    parser.add_argument("--config", default="config/robot.example.json")
     parser.add_argument("--mode", choices=("observe", "dry-run", "execute"), default="dry-run")
     parser.add_argument("--duration", type=float, default=30, help="Seconds; 0 runs until Ctrl+C")
     parser.add_argument("--save-observation", help="Write one measured observation as NPZ, without pickle")
